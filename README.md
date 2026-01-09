@@ -1,6 +1,6 @@
-# PhotoMap Frontend
+# Photo Map Frontend
 
-This is the **Angular 21 frontend** for the PhotoMap application, a web app that allows users to upload geotagged photos, view them on an interactive map, and add comments.  
+This is the **Angular 21 frontend** for the Photo Map application, a web app that allows users to upload geotagged photos, view them on an interactive map, and add comments.  
 
 ## Features
 

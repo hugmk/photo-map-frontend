@@ -1,6 +1,14 @@
-# PhotoMapFrontend
+# PhotoMap Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+This is the **Angular 21 frontend** for the PhotoMap application, a web app that allows users to upload geotagged photos, view them on an interactive map, and add comments.  
+
+## Features
+
+- User authentication (Login / Register) via JWT
+- Upload geotagged photos
+- Interactive map with markers for each photo (Google Maps API)
+- Click on markers to view photo details
+- Add and view comments for each photo
 
 ## Development server
 
@@ -11,20 +19,6 @@ ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
 
 ## Building
 

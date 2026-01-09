@@ -8,23 +8,28 @@
 
     <!-- RIGHT -->
     <div class="photo-info">
-      <h2>Photo details</h2>
+      <div class="photo-details">
+        <h2>Photo details</h2>
 
-      <p>Uploaded by <strong>{{ photo()!.user?.username }}</strong> on {{ photo()!.createdAt | date }}</p>
-      <div class="coords">
-        <p><strong>Latitude:</strong> {{ photo()!.latitude }}</p>
-        <p><strong>Longitude:</strong> {{ photo()!.longitude }}</p>
+        <p>Uploaded by <strong>{{ photo()!.user?.username }}</strong> on {{ photo()!.createdAt | date }}</p>
+        <div class="coords">
+          <p><strong>Latitude:</strong> {{ photo()!.latitude }}</p>
+          <p><strong>Longitude:</strong> {{ photo()!.longitude }}</p>
+        </div>
       </div>
+      
 
       <div class="comments-section">
         <h3>Comments</h3>
 
-        <div class="comment" *ngFor="let comment of comments()">
-          <p class="author">
-            {{ comment.user.username }}
-            <span class="date">{{ comment.createdAt | date:'short' }}</span>
-          </p>
-          <p class="content">{{ comment.content }}</p>
+        <div class="comments-list">
+          <div class="comment" *ngFor="let comment of comments()">
+            <p class="author">
+              {{ comment.user.username }}
+              <span class="date">{{ comment.createdAt | date:'short' }}</span>
+            </p>
+            <p class="content">{{ comment.content }}</p>
+          </div>
         </div>
 
         <form (ngSubmit)="addComment()">
@@ -38,6 +43,7 @@
           <button type="submit">Post</button>
         </form>
       </div>
+
     </div>
 
   </div>

@@ -1,0 +1,28 @@
+<div class="header">
+    <div class="title" (click)="onGoHome()">
+        Photo Map
+    </div>
+    <div class="actions">
+        <ng-container *ngIf="!authService.isLoggedIn(); else loggedIn">
+            <div class="auth">
+                <div class="login" (click)="onGoToLogin()">
+                    Login
+                </div>
+                <div class="register" (click)="onGoToRegister()">
+                    Register
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-template #loggedIn>
+            <div class="logged-actions">
+                <div class="upload-image" (click)="onGoToUpload()">
+                    + Upload an image
+                </div>
+                <div class="logout" (click)="onLogout()">
+                    Logout
+                </div>
+            </div>            
+        </ng-template>
+    </div>
+</div>

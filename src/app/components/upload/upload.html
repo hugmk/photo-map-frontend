@@ -1,0 +1,31 @@
+<div class="upload-page">
+  <div class="upload-card">
+    <h1>Upload a photo</h1>
+    <p class="subtitle">
+      Choose a geotagged image to share on the map
+    </p>
+
+    <form (ngSubmit)="submit()" #uploadForm="ngForm">
+      <div class="form-group">
+        <label for="image">Photo</label>
+        <input
+          type="file"
+          id="image"
+          accept="image/*"
+          (change)="onFileSelected($event)"
+          required
+        />
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="!selectedFile || loading">
+        {{ loading ? 'Uploading...' : 'Upload' }}
+      </button>
+
+      <p class="error" *ngIf="error">
+        {{ error }}
+      </p>
+    </form>
+  </div>
+</div>

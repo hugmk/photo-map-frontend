@@ -1,0 +1,55 @@
+<div class="register-page">
+  <div class="register-container">
+    <h1>Register</h1>
+
+    <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+
+      <!-- Username input -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          required
+          placeholder="Enter your username"
+        />
+      </div>
+
+      <!-- Email input -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          required
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <!-- Password input -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <!-- Register button -->
+      <button type="submit" [disabled]="!registerForm.form.valid">Register</button>
+    </form>
+
+    <!-- Login link -->
+    <p class="login-link">
+      Already have an account? <a routerLink="/login">Login</a>
+    </p>
+  </div>
+</div>

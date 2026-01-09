@@ -1,0 +1,58 @@
+
+:host {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+
+    .hero {
+        position: relative;
+        height: 100%;
+        background-image: url("../../../assets/images/hero_bg.jpg");
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .welcome {
+            margin-left: 10%;
+
+            .title {
+                font-size: 44px;
+                margin-bottom: 20px;
+            }
+
+            .start {
+                background-color: white;
+                color: black;
+                border-radius: 16px;
+                width: 200px;
+                height: 40px;
+                font-weight: bold;
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0; /* top:0; right:0; bottom:0; left:0 */
+        background-image: inherit;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.001);
+        opacity: 0.5;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .hero > * {
+        position: relative;
+        z-index: 1;
+    }
+}

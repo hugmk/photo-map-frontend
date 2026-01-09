@@ -1,0 +1,8 @@
+<google-map height="100%" width="100%" [zoom]="zoom" [center]="center">
+  @for (photo of photos; track $index) {
+    <map-marker 
+      [position]="{lat: +photo.latitude, lng: +photo.longitude}"
+      (mapClick)="openPhoto(photo)">
+    </map-marker>
+  }  
+</google-map>

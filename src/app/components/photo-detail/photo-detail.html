@@ -1,0 +1,44 @@
+<div class="photo-page" *ngIf="photo()">
+
+  <div class="photo-container">
+    <!-- LEFT -->
+    <div class="photo-image">
+      <img [src]="photo()!.imageUrl | imageUrl" alt="Photo" />
+    </div>
+
+    <!-- RIGHT -->
+    <div class="photo-info">
+      <h2>Photo details</h2>
+
+      <p>Uploaded by <strong>{{ photo()!.user?.username }}</strong> on {{ photo()!.createdAt | date }}</p>
+      <div class="coords">
+        <p><strong>Latitude:</strong> {{ photo()!.latitude }}</p>
+        <p><strong>Longitude:</strong> {{ photo()!.longitude }}</p>
+      </div>
+
+      <div class="comments-section">
+        <h3>Comments</h3>
+
+        <div class="comment" *ngFor="let comment of comments()">
+          <p class="author">
+            {{ comment.user.username }}
+            <span class="date">{{ comment.createdAt | date:'short' }}</span>
+          </p>
+          <p class="content">{{ comment.content }}</p>
+        </div>
+
+        <form (ngSubmit)="addComment()">
+          <textarea
+            [(ngModel)]="newComment"
+            name="comment"
+            placeholder="Add a comment..."
+            required>
+          </textarea>
+
+          <button type="submit">Post</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
